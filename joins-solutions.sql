@@ -25,7 +25,20 @@ WHERE product_id=6;
 
 --Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
 
+SELECT count(*)
+FROM customers
+JOIN addresses ON addresses.customer_id=customers.id
+JOIN orders ON orders.address_id=addresses.id
+GROUP BY customers;
 
 -- How many customers do we have?
+
+SELECT count(*)
+FROM customers;
+
 -- How many products do we carry?
+
+SELECT count(*)
+FROM products;
+
 -- What is the total available on-hand quantity of diet pepsi?
